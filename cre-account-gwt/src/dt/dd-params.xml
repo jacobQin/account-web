@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+
+  <config comment="contract">
+    <source>
+      <rootDir>../m3-account-core/src/main/java</rootDir>
+      <package>com.hd123.m3.account.dao.payment</package>
+    </source>
+    <gwt>
+      <rootDir>src/main/java</rootDir>
+      <resourceDir>src/main/resources</resourceDir>
+      <constant>
+        <packageMapping>
+          com.hd123.m3.account.gwt.payment.common.intf.client.dd.*
+        </packageMapping>
+      </constant>
+    </gwt>
+  </config>
+
+</project>

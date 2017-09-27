@@ -1,0 +1,29 @@
+<module>
+
+  <!-- Inherit the core Web Toolkit stuff. -->
+  <inherits name='com.google.gwt.user.User' />
+  <inherits name='com.hd123.rumba.gwt.base.Base' />
+  <inherits name='com.hd123.rumba.gwt.widget2.Widget2' />
+  <inherits name='com.hd123.rumba.gwt.widget2e.Widget2E' />
+  <inherits name='com.hd123.rumba.gwt.flecs.Flecs' />
+  <inherits name='com.hd123.rumba.gwt.flecs.prefs.FlecsPrefs' />
+  <inherits name='com.hd123.rumba.gwt.util.Util' />
+  <inherits name='com.hd123.rumba.webframe.gwt.noauthorized.intf.NoAuthorizedIntf' />
+
+  <inherits name='com.hd123.m3.commons.gwt.base.Base' />
+  <inherits name='com.hd123.m3.commons.gwt.widget.Widget' />
+  <inherits name='com.hd123.m3.commons.gwt.cpnt.dispatch.intf.DispatchIntf' />
+
+  <inherits name='com.hd123.m3.account.gwt.base.Base' />
+  <inherits name='com.hd123.m3.account.gwt.cpnts.Cpnts' />
+  <inherits name='com.hd123.m3.account.gwt.commons.Commons' />
+  <inherits name='com.hd123.m3.account.gwt.report.accountdefrayal.intf.AccountDefrayalIntf' />
+
+  <extend-property name="locale" values="zh_CN" />
+  <stylesheet src="css/AccountDefrayal.css" />
+
+  <entry-point
+    class="com.hd123.m3.account.gwt.report.accountdefrayal.client.EPAccountDefrayal" />
+  <servlet path="/account/report/accountdefrayal"
+    class='com.hd123.m3.account.gwt.report.accountdefrayal.server.AccountDefrayalServiceServlet' />
+</module>

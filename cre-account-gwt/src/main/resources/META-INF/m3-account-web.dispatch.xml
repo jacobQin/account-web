@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="gbk"?>
+<dispatchs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<!-- link标签中style的值:current(新标签页打开模块),new(弹出框中打开模块)。 -->
+
+	<dispatch name="fee" caption="费用单">
+		<link
+			url="${cre-web.url}/account/index.html#account.fee?node=view&amp;uuid=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="internalFee" caption="内部费用单">
+		<link
+			url="${account-web.url}/www/com.hd123.m3.account.gwt.internalfee.InternalFee/InternalFee.html?start=view&amp;_billNumber=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="receiptDeposit" caption="预存款单">
+		<link
+			url="${account-web.url}/www/com.hd123.m3.account.gwt.deposit.receipt.RecDeposit/RecDeposit.html?start=view&amp;billNumber=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="payDeposit" caption="预付款单">
+		<link
+			url="${account-web.url}/www/com.hd123.m3.account.gwt.deposit.payment.PayDeposit/PayDeposit.html?start=view&amp;billNumber=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="recInvoiceReg" caption="收款发票登记单">
+		<link
+			url="${account-web.url}/www/com.hd123.m3.account.gwt.invoice.receipt.RecInvoiceReg/RecInvoiceReg.html?start=view&amp;billNumber=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="payInvoiceReg" caption="付款发票登记单">
+		<link
+			url="${account-web.url}/www/com.hd123.m3.account.gwt.invoice.payment.PayInvoiceReg/PayInvoiceReg.html?start=view&amp;billNumber=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="statementAdjust" caption="账单调整单">
+		<link
+			url="${account-web.url}/www/com.hd123.m3.account.gwt.statement.adjust.StatementAdjust/StatementAdjust.html?start=view&amp;_billNumber=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="statement" caption="账单">
+		<link
+			url="${cre-web.url}/account/index.html#account.statement?node=view&amp;uuid=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="payDepositRepayment" caption="预付款还款单">
+		<link
+			url="${account-web.url}/www/com.hd123.m3.account.gwt.depositrepayment.payment.PayDepositRepayment/PayDepositRepayment.html?start=view&amp;_billnumber=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="receiptDepositRepayment" caption="预存款还款单">
+		<link
+			url="${account-web.url}/www/com.hd123.m3.account.gwt.depositrepayment.receipt.RecDepositRepayment/RecDepositRepayment.html?start=view&amp;_billnumber=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="payDepositMove" caption="预付款转移单">
+		<link
+			url="${account-web.url}/www/com.hd123.m3.account.gwt.depositmove.payment.PayDepositMove/PayDepositMove.html?start=view&amp;_billnumber=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="receiptDepositMove" caption="预存款转移单">
+		<link
+			url="${account-web.url}/www/com.hd123.m3.account.gwt.depositmove.receipt.RecDepositMove/RecDepositMove.html?start=view&amp;_billnumber=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="payPayment" caption="付款单">
+		<link
+			url="${account-web.url}/www/com.hd123.m3.account.gwt.payment.pay.Payment/Payment.html?start=view&amp;billnumber=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="receiptPayment" caption="收款单">
+		<link
+			url="${account-web.url}/www/com.hd123.m3.account.gwt.payment.rec.Receipt/Receipt.html?start=view&amp;billnumber=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="freeze" caption="账款冻结单">
+		<link
+			url="${account-web.url}/www/com.hd123.m3.account.gwt.freeze.Freeze/Freeze.html?start=view&amp;_billNumber=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="rebateBill" caption="销售额返款单">
+		<link
+			url="${account-web.url}/www/com.hd123.m3.account.gwt.rebate.RebateBill/RebateBill.html?start=view&amp;_uuid=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="contract" caption="合同">
+		<link
+			url="${investment-web.url}/www/com.hd123.m3.investment.gwt.contract.contract.Contract/Contract.html?start=view&amp;_billNumber=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="intention" caption="意向合同">
+		<link
+			url="${investment-web.url}/www/com.hd123.m3.investment.gwt.intention.contract.Intention/Intention.html?start=view&amp;_bill=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="leaseBackContract" caption="返租合同">
+		<link
+			url="${investment-web.url}/www/com.hd123.m3.investment.gwt.leaseback.contract.Contract/Contract.html?start=view&amp;_billNumber=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="store" caption="项目">
+		<link
+			url="${investment-web.url}/www/com.hd123.m3.investment.gwt.store.Store/Store.html#start=view"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="themeActivity" caption="主题促销单">
+		<link
+			url="${sales-web.url}/www/com.hd123.m3.sales.gwt.themeactivity.ThemeActivity/ThemeActivity.html?start=view&amp;billNumber=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="meterInput" caption="仪表数据录入单">
+		<link
+			url="${property-web.url}/www/com.hd123.m3.property.gwt.meter.input.MeterInput/MeterInput.html?start=view&amp;_bill=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="maintainBill" caption="商户维修单">
+		<link
+			url="${oper-web.url}/www/com.hd123.m3.oper.gwt.maintain.bill.MaintainBill/MaintainBill.html?start=view&amp;billNumber=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+	<dispatch name="SalesInput" caption="销售数据录入单">
+		<link
+			url="${cre-web.url}/sales/index.html#sales.salesinput?node=view&amp;uuid=${billNumber}"
+			style="current">
+		</link>
+	</dispatch>
+
+	<dispatch name="moonstar.order" caption="订货单">
+		<link
+			url="${sales-web.url}/www/com.hd123.m3.sales.gwt.moonstar.order.Order/Order.html#start=view"
+			style="current">
+		</link>
+	</dispatch>
+
+</dispatchs>

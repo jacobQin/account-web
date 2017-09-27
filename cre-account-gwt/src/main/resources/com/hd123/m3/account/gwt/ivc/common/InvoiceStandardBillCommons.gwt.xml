@@ -1,0 +1,17 @@
+<module>
+
+  <inherits name='com.google.gwt.i18n.I18N' />
+  <inherits name='com.hd123.m3.commons.gwt.base.Base' />
+  <inherits name='com.hd123.m3.commons.gwt.util.Util' />
+  <inherits name='com.hd123.rumba.gwt.base.Base' />
+  <inherits name='com.hd123.m3.commons.gwt.widget.Widget' />
+  <inherits name='com.hd123.rumba.gwt.util.Util' />
+  <inherits name='com.hd123.rumba.gwt.widget2.Widget2' />
+  <inherits name='com.hd123.rumba.gwt.widget2e.Widget2E' />
+  <inherits name='com.hd123.rumba.webframe.gwt.base.Base' />
+
+  <extend-property name="locale" values="zh_CN" />
+
+  <stylesheet src="css/Base.css" />
+  <servlet path='/ivc/common' class='com.hd123.m3.account.gwt.ivc.common.server.CommonServiceServlet' />
+</module>

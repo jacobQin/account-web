@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <inherits name='com.hd123.rumba.gwt.util.Util' />
+  <inherits name='com.hd123.rumba.webframe.gwt.base.Base' />
+
+  <inherits name='com.hd123.m3.commons.gwt.mres.MRes' />
+  <inherits name='com.hd123.m3.commons.gwt.bpm.Bpm' />
+
+
+  <extend-property name="locale" values="zh_CN" />
+</module>

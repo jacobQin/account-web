@@ -1,0 +1,16 @@
+<module>
+
+	<!-- Inherit the core Web Toolkit stuff. -->
+	<inherits name='com.google.gwt.i18n.I18N' />
+	<inherits name='com.hd123.rumba.gwt.util.Util' />
+	<inherits name='com.hd123.rumba.gwt.widget2.Widget2' />
+	<inherits name="com.hd123.rumba.gwt.widget2e.Widget2E" />
+	<inherits name='com.hd123.rumba.gwt.flecs.Flecs' />
+    <inherits name="com.hd123.rumba.webframe.gwt.audit.Audit" />
+    
+	<inherits name="com.hd123.m3.commons.gwt.util.Util" />
+	
+	<stylesheet src="css/styles.css" />
+
+	<extend-property name="locale" values="zh_CN" />
+</module>

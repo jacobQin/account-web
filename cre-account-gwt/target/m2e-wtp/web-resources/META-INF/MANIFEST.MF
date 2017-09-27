@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Implementation-Vendor: Shanghai HEADING Information Engineering Co., L
+ td
+Implementation-Title: cre-account-gwt
+Implementation-Version: 1.20-SNAPSHOT
+Implementation-Vendor-Id: com.hd123.cre.web
+Specification-Vendor: Shanghai HEADING Information Engineering Co., Lt
+ d
+Class-Path: cxf-bundle-jaxrs-2.7.0.jar woodstox-core-asl-4.1.4.jar sta
+ x2-api-3.1.1.jar xmlschema-core-2.0.3.jar geronimo-javamail_1.4_spec-
+ 1.7.1.jar wsdl4j-1.6.2.jar jaxb-impl-2.1.13.jar spring-context-3.2.9.
+ RELEASE.jar spring-expression-3.2.9.RELEASE.jar jackson-core-2.2.1.ja
+ r jackson-annotations-2.2.1.jar jackson-databind-2.2.1.jar javax.ws.r
+ s-api-2.0-m10.jar guava-18.0.jar spring-beans-3.2.9.RELEASE.jar sprin
+ g-context-support-3.2.9.RELEASE.jar spring-tx-3.2.9.RELEASE.jar quart
+ z-2.2.1.jar c3p0-0.9.1.1.jar burlap-2.1.12.jar spring-webmvc-3.2.9.RE
+ LEASE.jar httpclient-4.1.1.jar httpcore-4.1.1.jar gwt-servlet-2.7.0.j
+ ar javassist-3.12.1.GA.jar log4j-1.2.16.jar slf4j-api-1.7.13.jar slf4
+ j-log4j12-1.7.13.jar commons-digester3-3.2.jar commons-beanutils-1.8.
+ 3.jar commons-logging-1.1.1.jar commons-lang3-3.1.jar poi-3.10-FINAL.
+ jar commons-codec-1.6.jar poi-ooxml-schemas-3.10-FINAL.jar poi-ooxml-
+ 3.10-FINAL.jar dom4j-1.6.1.jar xml-apis-1.0.b2.jar xmlbeans-2.6.0.jar
+  stax-api-1.0.1.jar spring-core-3.2.9.RELEASE.jar spring-web-3.2.9.RE
+ LEASE.jar spring-aop-3.2.9.RELEASE.jar aopalliance-1.0.jar
+Build-Jdk: 1.7.0_17
+Built-By: Administrator
+Created-By: Maven Integration for Eclipse
+Specification-Title: cre-account-gwt
+Specification-Version: 1.20-SNAPSHOT
+

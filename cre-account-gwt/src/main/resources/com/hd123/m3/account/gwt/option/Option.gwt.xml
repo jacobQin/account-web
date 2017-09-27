@@ -1,0 +1,27 @@
+<module>
+  <inherits name='com.google.gwt.user.User' />
+  <inherits name='com.hd123.rumba.gwt.base.Base' />
+  <inherits name='com.hd123.rumba.gwt.util.Util' />
+  <inherits name='com.hd123.rumba.gwt.widget2.Widget2' />
+  <inherits name='com.hd123.rumba.gwt.widget2e.Widget2E' />
+
+  <inherits name='com.hd123.rumba.webframe.gwt.audit.Audit' />
+  <inherits name='com.hd123.rumba.webframe.gwt.noauthorized.intf.NoAuthorizedIntf' />
+  
+  <inherits name='com.hd123.ia.widget.resmap.ResMap' />
+  
+
+  <inherits name='com.hd123.m3.commons.gwt.widget.Widget' />
+  <inherits name='com.hd123.m3.commons.gwt.base.Base' />
+  <inherits name='com.hd123.m3.account.gwt.base.Base' />
+  <inherits name='com.hd123.m3.account.gwt.cpnts.Cpnts' />
+  <inherits name='com.hd123.m3.account.gwt.util.Util' />
+  <inherits name='com.hd123.m3.account.gwt.option.intf.OptionIntf' />
+  <inherits name='com.hd123.m3.account.gwt.subject.intf.SubjectIntf' />
+  <extend-property name="locale" values="zh_CN" />
+
+  <entry-point class="com.hd123.m3.account.gwt.option.client.EPOption" />
+
+  <servlet path="/account/option"
+    class="com.hd123.m3.account.gwt.option.server.OptionServiceServlet" />
+</module>

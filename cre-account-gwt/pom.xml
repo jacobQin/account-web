@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>account-web</artifactId>
+    <groupId>com.hd123.cre.web</groupId>
+    <version>1.20-SNAPSHOT</version>
+  </parent>
+  <artifactId>cre-account-gwt</artifactId>
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>war</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.ow2.asm</groupId>
+      <artifactId>asm</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.cre.server</groupId>
+      <artifactId>cre-commons-lic</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.cre.server</groupId>
+      <artifactId>cre-mdata-client</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.cre.server</groupId>
+      <artifactId>cre-investment-client</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.cre.server</groupId>
+      <artifactId>cre-account-client</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.cre.server</groupId>
+      <artifactId>cre-sales-client</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.bpm</groupId>
+      <artifactId>bpm-transport</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.bpm</groupId>
+      <artifactId>bpm-widget-gwt2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.bpm</groupId>
+      <artifactId>bpm-widget-gwt2</artifactId>
+      <classifier>sources</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.license</groupId>
+      <artifactId>heading-license</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.ia</groupId>
+      <artifactId>ia-audit-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.ia</groupId>
+      <artifactId>ia-audit-transport</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.ia</groupId>
+      <artifactId>ia-authen-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.ia</groupId>
+      <artifactId>ia-authen-transport</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.ia</groupId>
+      <artifactId>ia-author-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.ia</groupId>
+      <artifactId>ia-author-transport</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.ia</groupId>
+      <artifactId>ia-widget-gwt2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.ia</groupId>
+      <artifactId>ia-widget-gwt2</artifactId>
+      <classifier>sources</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.ia</groupId>
+      <artifactId>ia-ui-widget-gwt2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.ia</groupId>
+      <artifactId>ia-ui-widget-gwt2</artifactId>
+      <classifier>sources</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.ia.division</groupId>
+      <artifactId>ia-division-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.ia.division</groupId>
+      <artifactId>ia-division-rs</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.m3.commons</groupId>
+      <artifactId>m3-commons-biz</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.m3.commons</groupId>
+      <artifactId>m3-commons-data</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.m3.commons</groupId>
+      <artifactId>m3-commons-rumba</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.m3.commons</groupId>
+      <artifactId>m3-commons-rumba</artifactId>
+      <classifier>sources</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.m3.commons</groupId>
+      <artifactId>m3-commons-impex</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.m3.commons</groupId>
+      <artifactId>m3-commons-widget</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.m3.commons</groupId>
+      <artifactId>m3-commons-widget</artifactId>
+      <classifier>sources</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.m3.commons</groupId>
+      <artifactId>m3-commons-web</artifactId>
+      <classifier>classes</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.m3.commons</groupId>
+      <artifactId>m3-commons-web</artifactId>
+      <classifier>sources</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.m3.commons</groupId>
+      <artifactId>m3-commons-web</artifactId>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.m3.commons</groupId>
+      <artifactId>m3-commons-bpm</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.m3.commons</groupId>
+      <artifactId>m3-commons-bpm</artifactId>
+      <classifier>sources</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.m3.commons</groupId>
+      <artifactId>m3-commons-rpc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.m3.commons</groupId>
+      <artifactId>m3-commons-rs</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.rumba</groupId>
+      <artifactId>rumba-widget2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.rumba</groupId>
+      <artifactId>rumba-widget2-server</artifactId>
+    </dependency>
+    <dependency>
+      <!-- 必须位于com.google.gwt:gwt-user与gwt-servlet之前。 -->
+      <groupId>com.hd123.rumba</groupId>
+      <artifactId>rumba-widget2</artifactId>
+      <classifier>sources</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.rumba</groupId>
+      <artifactId>rumba-flecs</artifactId>
+      <classifier>sources</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.rumba</groupId>
+      <artifactId>rumba-flecs-server</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.rumba.commons</groupId>
+      <artifactId>rumba-commons-prefs</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.rumba.commons</groupId>
+      <artifactId>rumba-commons-gwt</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.rumba.commons</groupId>
+      <artifactId>rumba-commons-gwt</artifactId>
+      <classifier>sources</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.rumba.webframe</groupId>
+      <artifactId>rumba-webframe</artifactId>
+      <classifier>classes</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.rumba.webframe</groupId>
+      <artifactId>rumba-webframe</artifactId>
+      <classifier>sources</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.rumba.quartz</groupId>
+      <artifactId>rumba-quartz-gwt2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hd123.rumba.quartz</groupId>
+      <artifactId>rumba-quartz-gwt2</artifactId>
+      <classifier>sources</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt</groupId>
+      <artifactId>gwt-dev</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt</groupId>
+      <artifactId>gwt-user</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt</groupId>
+      <artifactId>gwt-servlet</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>javassist</groupId>
+      <artifactId>javassist</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-digester3</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml-schemas</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.xmlbeans</groupId>
+      <artifactId>xmlbeans</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.alex.csvhelper</groupId>
+      <artifactId>csvhelper</artifactId>
+    </dependency>
+  </dependencies>
+
+  <profiles>
+    <profile>
+      <id>default</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <executions>
+              <execution>
+                <phase>prepare-package</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <target>
+                    <mkdir dir="${basedir}/target/webapp" />
+                  </target>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <configuration>
+              <archiveClasses>true</archiveClasses>
+              <attachClasses>true</attachClasses>
+              <failOnMissingWebXml>false</failOnMissingWebXml>
+              <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes>
+              <webResources>
+                <resource>
+                  <directory>${basedir}/target/webapp</directory>
+                </resource>
+              </webResources>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>gwt</id>
+      <activation>
+        <property>
+          <name>gwt</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <executions>
+              <execution>
+                <phase>prepare-package</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <target>
+                    <mkdir dir="${basedir}/target/webapp" />
+                  </target>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <configuration>
+              <archiveClasses>true</archiveClasses>
+              <attachClasses>true</attachClasses>
+              <failOnMissingWebXml>false</failOnMissingWebXml>
+              <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes>
+              <webResources>
+                <resource>
+                  <directory>${basedir}/target/webapp</directory>
+                </resource>
+              </webResources>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>gwt-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>compile-www</id>
+                <phase>prepare-package</phase>
+                <goals>
+                  <goal>compile</goal>
+                </goals>
+                <configuration>
+                  <webappDirectory>${basedir}/target/webapp/www</webappDirectory>
+                  <deploy>${basedir}/target/gwt-cache</deploy>
+                  <persistentunitcache>true</persistentunitcache>
+                  <persistentunitcachedir>${basedir}/target/gwt-cache</persistentunitcachedir>
+                  <modules>
+                  
+                  <!-- 预存款账户 -->
+                    <module>com.hd123.m3.account.gwt.adv.Advance</module>
+                  <!-- 结算配置 -->
+                    <module>com.hd123.m3.account.gwt.option.Option</module>
+                  <!-- 销售额返款单 -->
+                    <module>com.hd123.m3.account.gwt.rebate.RebateBill</module>
+                  <!-- 收付款通知单 -->
+                    <module>com.hd123.m3.account.gwt.paymentnotice.PaymentNotice</module>
+                    
+                    
+                  <!-- 科目 
+                    <module>com.hd123.m3.account.gwt.subject.Subject</module> -->
+                  <!-- 银行资料
+                    <module>com.hd123.m3.account.gwt.bank.Bank</module> -->
+                  <!-- 财务付款方式
+                    <module>com.hd123.m3.account.gwt.paymenttype.PaymentType</module> -->
+                  <!-- 科目收付情况
+                    <module>com.hd123.m3.account.gwt.report.accountdefrayal.AccountDefrayal</module> -->
+                  <!-- 付款单
+                    <module>com.hd123.m3.account.gwt.payment.pay.Payment</module> -->
+                  <!-- 预存款单
+                    <module>com.hd123.m3.account.gwt.deposit.receipt.RecDeposit</module> -->
+                  <!-- 预存款还款单
+                    <module>com.hd123.m3.account.gwt.depositrepayment.receipt.RecDepositRepayment</module> -->
+                  <!-- 预存款转移单
+                    <module>com.hd123.m3.account.gwt.depositmove.receipt.RecDepositMove</module> -->
+                  <!-- 出账
+                    <module>com.hd123.m3.account.gwt.contract.accountsettle.AccountSettle</module> -->
+                  <!-- 账单
+                    <module>com.hd123.m3.account.gwt.statement.Statement</module> -->
+                  <!-- 账单调整单 
+                    <module>com.hd123.m3.account.gwt.statement.adjust.StatementAdjust</module>-->
+                  <!-- 收款单
+                    <module>com.hd123.m3.account.gwt.payment.rec.Receipt</module> -->
+                  <!-- 费用单
+                    <module>com.hd123.m3.account.gwt.fee.Fee</module> -->
+                    
+                  <!-- 预付款单
+                    <module>com.hd123.m3.account.gwt.deposit.payment.PayDeposit</module> -->
+                  <!-- 预付款还款单
+                    <module>com.hd123.m3.account.gwt.depositrepayment.payment.PayDepositRepayment</module> -->
+                  <!-- 预付款转移单
+                    <module>com.hd123.m3.account.gwt.depositmove.payment.PayDepositMove</module> -->
+                  <!-- 付款发票登记单 
+                    <module>com.hd123.m3.account.gwt.invoice.payment.PayInvoiceReg</module>-->
+                  <!-- 内部费用单
+                    <module>com.hd123.m3.account.gwt.internalfee.InternalFee</module> -->
+                    
+                  <!-- 发票入库单 
+                    <module>com.hd123.m3.account.gwt.ivc.instock.InvoiceInstock</module>-->
+                  <!-- 发票库存 
+                    <module>com.hd123.m3.account.gwt.ivc.stock.InvoiceStock</module>-->
+                  <!-- 发票领用单 
+                    <module>com.hd123.m3.account.gwt.ivc.receive.InvoiceReceive</module>-->
+                  <!-- 发票作废单
+                    <module>com.hd123.m3.account.gwt.ivc.abort.InvoiceAbort</module> -->
+                  <!-- 发票领退单
+                    <module>com.hd123.m3.account.gwt.ivc.returns.InvoiceReturn</module> -->
+                  <!-- 发票调拨单
+                    <module>com.hd123.m3.account.gwt.ivc.transport.InvoiceTransport</module> -->
+                  <!-- 发票交换单 
+                    <module>com.hd123.m3.account.gwt.ivc.exchange.InvoiceExchange</module>-->
+                  <!-- 发票回收单 
+                    <module>com.hd123.m3.account.gwt.ivc.recycle.InvoiceRecycle</module>-->
+                  <!-- 收款发票登记单 
+                    <module>com.hd123.m3.account.gwt.invoice.receipt.RecInvoiceReg</module>-->
+                  <!-- 账款冻结单 
+                    <module>com.hd123.m3.account.gwt.freeze.Freeze</module>-->
+                  
+                  <!-- 收款发票登记单 
+                    <module>com.hd123.m3.account.gwt.ivc.reg.rec.InvoiceRegReceipt</module>-->
+                  </modules>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+</project>

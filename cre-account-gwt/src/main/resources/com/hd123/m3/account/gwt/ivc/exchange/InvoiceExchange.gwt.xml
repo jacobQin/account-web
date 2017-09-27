@@ -1,0 +1,23 @@
+<module>
+  <inherits name='com.google.gwt.user.User' />
+  <inherits name='com.hd123.m3.commons.gwt.util.Util' />
+  <inherits name='com.hd123.m3.commons.gwt.bpm.Bpm' />
+  <inherits name='com.hd123.m3.commons.gwt.base.Base' />
+  <inherits name='com.hd123.m3.account.gwt.acc.Acc'/>
+  <inherits name='com.hd123.m3.account.gwt.ivc.exchange.intf.InvoiceExchangeIntf' />
+  <inherits name='com.hd123.m3.account.gwt.ivc.common.InvoiceStandardBillCommons' />
+  <inherits name='com.hd123.m3.account.gwt.cpnts.Cpnts' />
+  <inherits name='com.hd123.rumba.commons.gwt.mini.Mini' />
+  <inherits name='com.hd123.rumba.gwt.base.Base' />
+  <inherits name='com.hd123.rumba.gwt.util.Util' />
+  <inherits name='com.hd123.rumba.gwt.widget2.Widget2' />
+  <inherits name='com.hd123.rumba.webframe.gwt.entrypoint.EntryPoint' />
+  <inherits name='com.hd123.rumba.gwt.flecs.Flecs' />
+  <inherits name='com.hd123.rumba.gwt.flecs.prefs.FlecsPrefs' />
+
+  <extend-property name="locale" values="zh_CN" />
+
+  <entry-point class="com.hd123.m3.account.gwt.ivc.exchange.client.EPInvoiceExchange" />
+
+  <servlet path="/invoice/exchange" class="com.hd123.m3.account.gwt.ivc.exchange.server.InvoiceExchangeServiceServlet" />
+</module>	

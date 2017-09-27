@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 版权所有(C)，上海海鼎信息工程股份有限公司，2013，保留所有权利。 -->
+<author-schema xmlns="http://p.hd123.com/hdia/author-schema_1-0" xmlns:xsi="http://http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://p.hd123.com/hdia/author-schema_1-0
+    http://p.hd123.com/hdia/author-schema_1-0.xsd">
+
+  <action-definitions>
+    <action-definition>
+      <key>accSettle</key>
+      <caption>出账</caption>
+    </action-definition>
+    <action-definition>
+      <key>modifyAccount</key>
+      <caption>账款修改</caption>
+    </action-definition>
+    <action-definition>
+      <key>addFromStatement</key>
+      <caption>账单添加权</caption>
+    </action-definition>
+    <action-definition>
+      <key>addFromInvoice</key>
+      <caption>发票登记单添加权</caption>
+    </action-definition>
+    <action-definition>
+      <key>addFromPayNotice</key>
+      <caption>收付款通知单添加权</caption>
+    </action-definition>
+    <action-definition>
+      <key>addFromPayment</key>
+      <caption>收付款单添加权</caption>
+    </action-definition>
+    <action-definition>
+      <key>addFromSrcBill</key>
+      <caption>来源单据添加权</caption>
+    </action-definition>
+    <action-definition>
+      <key>addFromAccount</key>
+      <caption>账款添加权</caption>
+    </action-definition>
+    <action-definition>
+      <key>attachmentEdit</key>
+      <caption>附件编辑权</caption>
+    </action-definition>
+    <action-definition>
+      <key>ivcRegiste</key>
+      <caption>发票登记权</caption>
+    </action-definition>
+  </action-definitions>
+
+  <resource-subtree>
+    <key>account</key>
+    <caption>账务</caption>
+    <node>
+      <key>basic</key>
+      <caption>基础资料</caption>
+      <node id="account.subject">
+        <key>subject</key>
+        <caption>科目</caption>
+        <actions>
+          <create />
+          <read />
+          <update />
+          <action>config</action>
+        </actions>
+      </node>
+      <node id="account.paymentType">
+        <key>paymentType</key>
+        <caption>财务付款方式</caption>
+        <actions>
+          <read />
+          <create />
+          <update />
+        </actions>
+      </node>
+      <node id="account.bank">
+        <key>bank</key>
+        <caption>银行资料</caption>
+        <actions>
+          <create />
+          <read />
+          <update />
+          <delete />
+        </actions>
+      </node>
+      <node id="account.option">
+        <key>option</key>
+        <caption>结算配置</caption>
+        <actions>
+          <read />
+          <update />
+        </actions>
+      </node>
+    </node>
+
+    <node id="account.fee">
+      <key>fee</key>
+      <caption>费用单</caption>
+      <actions>
+        <crud />
+        <action>effect</action>
+        <action>abort</action>
+        <action>print</action>
+        <action>import</action>
+        <action>export</action>
+      </actions>
+    </node>
+
+    <node id="account.internalFee">
+      <key>internalFee</key>
+      <caption>内部费用单</caption>
+      <actions>
+        <crud />
+        <action>effect</action>
+        <action>abort</action>
+        <action>print</action>
+      </actions>
+    </node>
+
+    <node>
+      <key>receivable</key>
+      <caption>财务应收</caption>
+      <node id="account.accountSettle">
+        <key>accountSettle</key>
+        <caption>出账</caption>
+        <actions>
+          <action>accSettle</action>
+        </actions>
+      </node>
+      <node id="account.statement">
+        <key>statement</key>
+        <caption>账单</caption>
+        <actions>
+          <create />
+          <read />
+          <update />
+          <delete />
+          <action>effect</action>
+          <action>abort</action>
+          <action>modifyAccount</action>
+          <action>attachmentEdit</action>
+          <action>print</action>
+          <action>sendEmail</action>
+        </actions>
+      </node>
+      <node id="account.statementAdjust">
+        <key>statementadjust</key>
+        <caption>账单调整单</caption>
+        <actions>
+          <crud />
+          <action>effect</action>
+          <action>abort</action>
+          <action>print</action>
+        </actions>
+      </node>
+      <node id="account.paymentNotice">
+        <key>paymentNotice</key>
+        <caption>收付款通知单</caption>
+        <actions>
+          <crud />
+          <action>effect</action>
+          <action>abort</action>
+          <action>print</action>
+        </actions>
+      </node>
+    </node>
+
+    <node>
+      <key>collection</key>
+      <caption>收款</caption>
+      <node id="account.payment.rec">
+        <key>receipt</key>
+        <caption>收款单</caption>
+        <actions>
+          <crud />
+          <action>effect</action>
+          <action>abort</action>
+          <action>print</action>
+        </actions>
+      </node>
+      <node id="account.recDeposit">
+        <key>recDeposit</key>
+        <caption>预存款单</caption>
+        <actions>
+          <crud />
+          <action>effect</action>
+          <action>abort</action>
+          <action>print</action>
+        </actions>
+      </node>
+      <node id="account.recDepositRepayment">
+        <key>recDepositRepayment</key>
+        <caption>预存款还款单</caption>
+        <actions>
+          <crud />
+          <action>effect</action>
+          <action>abort</action>
+          <action>print</action>
+        </actions>
+      </node>
+      <node id="account.recDepositMove">
+        <key>recDepositMove</key>
+        <caption>预存款转移单</caption>
+        <actions>
+          <crud />
+          <action>effect</action>
+          <action>abort</action>
+          <action>print</action>
+        </actions>
+      </node>
+    </node>
+
+    <node>
+      <key>payment</key>
+      <caption>付款</caption>
+      <node id="account.payment.pay">
+        <key>payment</key>
+        <caption>付款单</caption>
+        <actions>
+          <crud />
+          <action>effect</action>
+          <action>abort</action>
+          <action>print</action>
+          <action>config</action>
+          <action>addFromStatement</action>
+          <action>addFromInvoice</action>
+          <action>addFromPayNotice</action>
+          <action>addFromSrcBill</action>
+          <action>addFromAccount</action>
+          <action>ivcRegiste</action>
+        </actions>
+      </node>
+      <node id="account.payInvoiceReg">
+        <key>payInvoiceReg</key>
+        <caption>付款发票登记单</caption>
+        <actions>
+          <crud />
+          <action>effect</action>
+          <action>abort</action>
+          <action>config</action>
+          <action>print</action>
+          <action>addFromStatement</action>
+          <action>addFromPayNotice</action>
+          <action>addFromSrcBill</action>
+          <action>addFromAccount</action>
+        </actions>
+      </node>
+      <node id="account.payDeposit">
+        <key>payDeposit</key>
+        <caption>预付款单</caption>
+        <actions>
+          <crud />
+          <action>effect</action>
+          <action>abort</action>
+          <action>print</action>
+        </actions>
+      </node>
+      <node id="account.payDepositRepayment">
+        <key>payDepositRepayment</key>
+        <caption>预付款还款单</caption>
+        <actions>
+          <crud />
+          <action>effect</action>
+          <action>abort</action>
+          <action>print</action>
+        </actions>
+      </node>
+      <node id="account.payDepositMove">
+        <key>payDepositMove</key>
+        <caption>预付款转移单</caption>
+        <actions>
+          <crud />
+          <action>effect</action>
+          <action>abort</action>
+          <action>print</action>
+        </actions>
+      </node>
+    </node>
+
+    <node id="account.report.accountdefrayal">
+      <key>accountdefrayal</key>
+      <caption>科目收付情况</caption>
+      <actions>
+        <read />
+      </actions>
+    </node>
+
+    <node id="account.advance">
+      <key>advance</key>
+      <caption>预存款账户</caption>
+      <actions>
+        <read />
+      </actions>
+    </node>
+
+    <node id="account.freeze">
+      <key>freeze</key>
+      <caption>账款冻结单</caption>
+      <actions>
+        <create />
+        <read />
+        <action>freeze</action>
+        <action>unfreeze</action>
+        <action>print</action>
+      </actions>
+    </node>
+    <node>
+      <key>ivc</key>
+      <caption>发票</caption>
+      <node id="account.invoice.instock">
+        <key>instock</key>
+        <caption>发票入库单</caption>
+        <actions>
+          <crud />
+          <action>abort</action>
+          <action>effect</action>
+          <action>print</action>
+        </actions>
+      </node>
+      <node id="account.invoice.stock">
+        <key>stock</key>
+        <caption>发票库存</caption>
+        <actions>
+          <read />
+        </actions>
+      </node>
+      <node id="account.invoice.receive">
+        <key>receive</key>
+        <caption>发票领用单</caption>
+        <actions>
+          <crud />
+          <action>effect</action>
+          <action>print</action>
+        </actions>
+      </node>
+      <node id="account.invoice.abort">
+        <key>abort</key>
+        <caption>发票作废单</caption>
+        <actions>
+          <crud />
+          <action>effect</action>
+          <action>print</action>
+        </actions>
+      </node>
+      <node id="account.invoice.return">
+        <key>return</key>
+        <caption>发票领退单</caption>
+        <actions>
+          <crud />
+          <action>effect</action>
+          <action>print</action>
+        </actions>
+      </node>
+      <node id="account.invoice.exchange">
+        <key>exchange</key>
+        <caption>发票交换单</caption>
+        <actions>
+          <crud />
+          <action>abort</action>
+          <action>effect</action>
+          <action>print</action>
+        </actions>
+      </node>
+      <node id="account.invoice.transport">
+        <key>transport</key>
+        <caption>发票调拨单</caption>
+        <actions>
+          <crud />
+          <action>effect</action>
+          <action>print</action>
+        </actions>
+      </node>
+      <node id="account.invoice.recycle">
+        <key>recycle</key>
+        <caption>发票回收单</caption>
+        <actions>
+          <crud />
+          <action>abort</action>
+          <action>effect</action>
+          <action>print</action>
+        </actions>
+      </node>
+      <node id="account.invoice.reg.rec">
+        <key>reg.rec</key>
+        <caption>收款发票登记单</caption>
+        <actions>
+          <crud />
+          <action>effect</action>
+          <action>abort</action>
+          <action>config</action>
+          <action>print</action>
+        </actions>
+      </node>
+    </node>
+    <node id="account.rebate">
+      <key>rebate</key>
+      <caption>销售额返款单</caption>
+      <actions>
+        <crud />
+        <action>abort</action>
+        <action>effect</action>
+        <action>print</action>
+      </actions>
+    </node>
+    <node>
+      <key>other</key>
+      <caption>其它</caption>
+      <node id="account.accobjectbill">
+        <key>accobjectbill</key>
+        <caption>核算主体单</caption>
+        <actions>
+          <crud />
+          <action>effect</action>
+        </actions>
+      </node>
+      <node id="account.accobject">
+        <key>accobject</key>
+        <caption>核算主体</caption>
+        <actions>
+          <action>maintain</action>
+        </actions>
+      </node>
+      <node id="account.paymentType.reductionRatio">
+        <key>paymentType.reductionRatio</key>
+        <caption>付款方式提成比例</caption>
+        <actions>
+          <crud />
+          <action>effect</action>
+          <action>print</action>
+        </actions>
+      </node>
+    </node>
+  </resource-subtree>
+</author-schema>

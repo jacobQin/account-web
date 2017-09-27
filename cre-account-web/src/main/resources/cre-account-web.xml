@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 版权所有(C)，上海海鼎信息工程股份有限公司，2013，所有权利保留。 -->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    ">
+
+  <!-- Java Mail Sender -->
+  <bean id="cre-mail.javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl"
+    p:protocol="${cre.mail.sender.protocol:smtp}" p:host="${cre.mail.sender.host:}" p:port="${cre-mail-core.mail.sender.port:-1}"
+    p:username="${cre.mail.sender.username:}" p:password="${cre.mail.sender.password:}">
+    <property name="javaMailProperties">
+      <props>
+        <prop key="mail.${cre.mail.sender.protocol:smtp}.auth">
+          ${cre.mail.sender.auth:true}
+        </prop>
+        <prop key="mail.smtp.socketFactory.port">
+          ${cre-mail-core.mail.sender.port:-1}
+        </prop>
+        <prop key="mail.smtp.socketFactory.class">
+          javax.net.ssl.SSLSocketFactory
+        </prop>
+        <prop key="mail.smtp.socketFactory.fallback">
+          true
+        </prop>
+      </props>
+    </property>
+  </bean>
+</beans>

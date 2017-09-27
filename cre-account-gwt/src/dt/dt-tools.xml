@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="[ m3-account-web-main ] Development Tool Set" basedir="../.." xmlns:mvn="antlib:org.apache.maven.artifact.ant">
+
+	<mvn:pom id="pom" file="pom.xml" />
+	<mvn:dependencies pathId="project.classpath">
+		<pom file="pom.xml" />
+	</mvn:dependencies>
+
+	<property environment="env" />
+	<property file="../m3-account-dt/src/dt/public-settings.properties" />
+	<property name="tomcat.deploy" value="${tomcat.webapps}" />
+
+	<!-- ================================= 
+    target: +mvn-install-shortcut
+  ================================= -->
+	<target name="+mvn-install-shortcut">
+		<mvn:mvn pom="pom.xml" mavenHome="${env.M2_HOME}" fork="true">
+			<arg value="install" />
+			<arg value="-Pshortcut" />
+		</mvn:mvn>
+	</target>
+
+	<!-- ================================= 
+    target: +mvn-deploy
+  ================================= -->
+	<target name="+mvn-deploy">
+		<mvn:mvn pom="pom.xml" mavenHome="${env.M2_HOME}" fork="true">
+			<arg value="deploy" />
+		</mvn:mvn>
+	</target>
+
+	<!-- ================================= 
+    target: +mvn-deploy-gwt
+  ================================= -->
+	<target name="+mvn-deploy-gwt">
+		<mvn:mvn pom="pom.xml" mavenHome="${env.M2_HOME}" fork="true">
+			<arg value="clean" />
+			<arg value="deploy" />
+			<arg value="-Pgwt" />
+		</mvn:mvn>
+	</target>
+
+	<!-- ================================= 
+    target: +mvn-javadoc
+  ================================= -->
+	<target name="+mvn-javadoc">
+		<mvn:mvn pom="pom.xml" mavenHome="${env.M2_HOME}" fork="true">
+			<arg value="org.apache.maven.plugins:maven-javadoc-plugin:javadoc" />
+		</mvn:mvn>
+	</target>
+
+	<!-- ================================= 
+    target: +mvn-dependency
+  ================================= -->
+	<target name="+mvn-dependency">
+		<mvn:mvn pom="pom.xml" mavenHome="${env.M2_HOME}" fork="true">
+			<arg value="org.apache.maven.plugins:maven-dependency-plugin:analyze" />
+		</mvn:mvn>
+	</target>
+
+	<!-- ================================= 
+    target: +mvn-site
+  ================================= -->
+	<target name="+mvn-site">
+		<mvn:mvn pom="pom.xml" mavenHome="${env.M2_HOME}" fork="true">
+			<arg value="site" />
+		</mvn:mvn>
+	</target>
+
+	<!-- ================================= 
+    target: +src-dd              
+  ================================= -->
+	<target name="+src-dd">
+		<mvn:dependencies pathId="dd.classpath">
+			<dependency groupId="com.hd123.rumba.devtools" artifactId="rumba-devtools-dd" version="${pom.properties.rumba-devtools.version}" />
+		</mvn:dependencies>
+		<java classname="com.hd123.rumba.devtools.datadictionary.DDMain">
+			<classpath refid="dd.classpath" />
+			<classpath refid="project.classpath" />
+			<classpath>
+				<pathelement location="${pom.build.outputDirectory}" />
+				<pathelement location="${basedir}/src/main/resources" />
+			</classpath>
+			<arg value="-w" />
+			<arg value="${basedir}" />
+			<arg value="-f" />
+			<arg value="${basedir}/src/dt/dd-params.xml" />
+			<arg value="-g" />
+			<arg value="${basedir}/src/dt/dd-params.properties" />
+		</java>
+	</target>
+
+	<!-- ================================= 
+    target: +gwt-deploy-host
+    | 部署生成用于GWT Host模式运行环境。执行结果将在当前工程创建目录“\war”。
+  ================================= -->
+	<target name="+gwt-deploy-host">
+		<copy file="src/dt/war/WEB-INF/classes/debug-login.sample.properties" tofile="src/dt/war/WEB-INF/classes/debug-login.properties" overwrite="false" />
+		<copy file="src/dt/war/WEB-INF/classes/ejb-context.sample.xml" tofile="src/dt/war/WEB-INF/classes/ejb-context.xml" overwrite="false" />
+		<delete failonerror="false">
+			<fileset dir="war">
+				<exclude name="WEB-INF/web.xml" />
+			</fileset>
+		</delete>
+		<mkdir dir="war" />
+		<mvn:mvn pom="pom.xml" mavenHome="${env.M2_HOME}" fork="true">
+			<arg value="org.apache.maven.plugins:maven-war-plugin:exploded" />
+			<arg value="-Pwar" />
+		</mvn:mvn>
+		<copy todir="war">
+			<fileset dir="src/dt/war">
+				<exclude name="**/*.sample.*" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- ================================= 
+    target: +gwt-web-xml
+    | 用于GWT Host模式，指定gwt模块修改war/WEB-INF/web.xml。              
+  ================================= -->
+	<target name="+gwt-web-xml">
+		<input message="请输入GWT模块名（例如：com.hd123.rumba.gwt.entry.Entry）：" addproperty="gwt.module" />
+		<mvn:dependencies pathId="gwtweb.classpath">
+			<dependency groupId="com.hd123.rumba.devtools" artifactId="rumba-devtools-gwtweb" version="${pom.properties.rumba-devtools.version}" />
+		</mvn:dependencies>
+		<mkdir dir="${basedir}/war/WEB-INF" />
+		<java classname="com.hd123.rumba.devtools.gwtweb.Main">
+			<classpath refid="gwtweb.classpath" />
+			<classpath refid="project.classpath" />
+			<classpath>
+				<pathelement location="${basedir}/src/main/resources" />
+			</classpath>
+			<arg value="-m" />
+			<arg value="${gwt.module}" />
+			<arg value="-w" />
+			<arg value="${basedir}/war/WEB-INF/web.xml" />
+			<arg value="-t" />
+			<arg value="${basedir}/src/dt/war/WEB-INF/web.xml" />
+		</java>
+	</target>
+
+	<!-- ================================= 
+    target: +tomcat-deploy
+    | 部署GWT模块编译结果到Tomcat应用服务器。
+  ================================= -->
+	<target name="+tomcat-deploy">
+		<copy todir="${tomcat.deploy}/${tomcat.war}/WEB-INF/classes" failonerror="false">
+			<fileset dir="${pom.build.outputDirectory}" />
+		</copy>
+		<copy todir="${tomcat.deploy}/${tomcat.war}" failonerror="false">
+			<fileset dir="${pom.build.directory}/webapp" />
+		</copy>
+	</target>
+
+	<!-- ================================= 
+    target: +gwt-download
+    | 下载当前工程所有gwt模块编译结果到本地。
+    | public-settings: repository.release, repository.snapshot
+  ================================= -->
+	<target name="+gwt-download">
+		<m2-unpack-war groupId="${pom.groupId}" artifactId="${pom.artifactId}" version="${pom.version}" todir="${pom.build.directory}/webapp" />
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+    marcodef: m2-unpack-war
+    | 将指定war类型构件，从maven仓库下载并解压缩到指定目录。
+    | public-settings: repository.release, repository.snapshot
+  - - - - - - - - - - - - - - - - - -->
+	<macrodef name="m2-unpack-war">
+		<attribute name="groupId" />
+		<attribute name="artifactId" />
+		<attribute name="version" />
+		<attribute name="todir" />
+		<sequential>
+			<mvn:dependencies pathId="dev-tools.classpath">
+				<dependency groupId="com.hd123.rumba.devtools" artifactId="rumba-devtools-maven" version="${pom.properties.rumba-devtools.version}" />
+			</mvn:dependencies>
+			<java classname="com.hd123.rumba.devtools.maven.Main">
+				<classpath refid="dev-tools.classpath" />
+				<arg value="-a" />
+				<arg value="@{groupId}:@{artifactId}:@{version}:war" />
+				<arg value="-d" />
+				<arg value="${pom.build.directory}/dt-tools" />
+				<arg value="-r" />
+				<arg value="${repository.release};${repository.snapshot}" />
+				<arg value="-q" />
+			</java>
+			<unwar src="${pom.build.directory}/dt-tools/@{artifactId}-@{version}.war" dest="@{todir}" />
+		</sequential>
+	</macrodef>
+
+	<!-- ================================= 
+    target: +gwt-compile-all
+    | 编译工程所有GWT模块。              
+  ================================= -->
+	<target name="+gwt-compile-all">
+		<!-- 这里是需要编译的gwt模块列表-->
+		<antcall target="accountsettle" />
+		<antcall target="fee" />
+		<antcall target="paydeposit" />
+		<antcall target="recdeposit" />
+		<antcall target="statementadjust" />
+		<antcall target="recinvoicereg" />
+		<antcall target="payinvoicereg" />
+		<antcall target="statement" />
+		<antcall target="advance" />
+		<antcall target="receipt" />
+		<antcall target="payment" />
+		<antcall target="paydepositrepayment" />
+		<antcall target="recDepositRepayment" />
+		<antcall target="paymentnotice" />
+		<antcall target="paydepositmove" />
+		<antcall target="recdepositmove" />
+		<antcall target="freeze" />
+		<antcall target="accountdefrayal" />
+		<antcall target="internalfee" />
+		<antcall target="invoiceExchange" />
+		<antcall target="invoiceInstock" />
+		<antcall target="subject" />
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+    marcodef: gwt-compile-module
+    | 编译指定GWT模块
+  - - - - - - - - - - - - - - - - - -->
+	<macrodef name="gwt-compile-module">
+		<attribute name="module" />
+		<attribute name="destDir" />
+		<attribute name="www" default="www" />
+		<attribute name="warDir" default="${basedir}/target" />
+		<sequential>
+			<echo>编译@{module}...</echo>
+			<mkdir dir="@{warDir}/webapp" />
+			<mvn:mvn pom="pom.xml" mavenHome="${env.M2_HOME}" fork="true">
+				<arg value="org.codehaus.mojo:gwt-maven-plugin:compile" />
+				<arg value="-Pgwt" />
+				<arg value="-Dgwt.module=@{module}" />
+				<!--
+        <arg value="-Dgwt.style=DETAILED"/>
+        -->
+				<arg value="-Dgwt.localWorkers=4" />
+				<jvmarg value="-Xmx768M" />
+			</mvn:mvn>
+			<delete dir="@{warDir}/webapp/@{www}/@{module}" />
+			<move todir="@{warDir}/webapp/@{www}/@{module}" overwrite="true">
+				<fileset dir="${pom.build.directory}/webapp/@{module}" />
+			</move>
+		</sequential>
+	</macrodef>
+
+	<!-- ================================= 
+  	| 逐个GWT模块编译
+  ================================= -->
+
+	<target name="accountsettle">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.contract.accountsettle.AccountSettle" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="fee">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.fee.Fee" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="paydeposit">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.deposit.payment.PayDeposit" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="recdeposit">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.deposit.receipt.RecDeposit" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="statementadjust">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.statement.adjust.StatementAdjust" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="recinvoicereg">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.invoice.receipt.RecInvoiceReg" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="payinvoicereg">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.invoice.payment.PayInvoiceReg" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="statement">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.statement.Statement" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="advance">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.adv.Advance" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="receipt">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.payment.rec.Receipt" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="payment">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.payment.pay.Payment" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="paydepositrepayment">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.depositrepayment.payment.PayDepositRepayment" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="recDepositRepayment">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.depositrepayment.receipt.RecDepositRepayment" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="paymentnotice">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.paymentnotice.PaymentNotice" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="paydepositmove">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.depositmove.payment.PayDepositMove" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="recdepositmove">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.depositmove.receipt.RecDepositMove" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="freeze">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.freeze.Freeze" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="accountdefrayal">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.report.accountdefrayal.AccountDefrayal" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="internalfee">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.internalfee.InternalFee" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="invoiceExchange">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.ivc.exchange.InvoiceExchange" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="subject">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.subject.Subject" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="ivc.reg.rec">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.ivc.reg.rec.InvoiceRegReceipt" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="invoiceInstock">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.ivc.instock.InvoiceInstock" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="rebatebill">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.rebate.RebateBill" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+	<target name="option">
+		<gwt-compile-module module="com.hd123.m3.account.gwt.option.Option" destDir="${tomcat.deploy}/${tomcat.war}" />
+	</target>
+</project>

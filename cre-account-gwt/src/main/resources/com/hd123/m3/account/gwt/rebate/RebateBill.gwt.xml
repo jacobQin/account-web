@@ -1,0 +1,24 @@
+<module>
+  <inherits name='com.google.gwt.user.User' />
+  <inherits name='com.hd123.m3.commons.gwt.util.Util' />
+  <inherits name='com.hd123.m3.commons.gwt.bpm.Bpm' />
+  <inherits name='com.hd123.m3.commons.gwt.base.Base' />
+  <inherits name='com.hd123.m3.account.gwt.rebate.intf.RebateBillIntf' />
+  <inherits name='com.hd123.m3.account.gwt.cpnts.Cpnts' />
+  <inherits name='com.hd123.m3.account.gwt.base.Base' />
+  <inherits name='com.hd123.rumba.commons.gwt.mini.Mini' />
+  <inherits name='com.hd123.rumba.gwt.base.Base' />
+  <inherits name='com.hd123.rumba.gwt.util.Util' />
+  <inherits name='com.hd123.rumba.gwt.widget2.Widget2' />
+  <inherits name='com.hd123.rumba.webframe.gwt.entrypoint.EntryPoint' />
+  <inherits name='com.hd123.rumba.gwt.flecs.Flecs' />
+  <inherits name='com.hd123.rumba.gwt.flecs.prefs.FlecsPrefs' />
+  <inherits name='com.hd123.m3.commons.gwt.widget.Widget' />
+  <inherits name='com.hd123.m3.account.gwt.payment.pay.intf.PaymentIntf' />
+
+  <extend-property name="locale" values="zh_CN" />
+
+  <entry-point class="com.hd123.m3.account.gwt.rebate.client.EPRebateBill" />
+
+  <servlet path="/rebate/bill" class="com.hd123.m3.account.gwt.rebate.server.RebateBillServiceServlet" />
+</module>	

@@ -1,0 +1,21 @@
+<module>
+
+  <!-- Inherit the core Web Toolkit stuff. -->
+  <inherits name='com.google.gwt.user.User' />
+  <inherits name='com.hd123.rumba.gwt.base.Base' />
+  <inherits name='com.hd123.rumba.gwt.util.Util' />
+  <inherits name='com.hd123.rumba.gwt.widget2.Widget2' />
+  <inherits name='com.hd123.rumba.gwt.widget2e.Widget2E' />
+  <inherits name='com.hd123.rumba.gwt.flecs.Flecs' />
+
+  <inherits name='com.hd123.m3.account.gwt.invoice.commons.InvoiceRegCommons' />
+  <inherits name='com.hd123.m3.account.gwt.ivc.common.InvoiceStandardBillCommons' />
+  <inherits name='com.hd123.m3.account.gwt.payment.commons.Commons' />
+  <inherits name='com.hd123.m3.account.gwt.payment.pay.intf.PaymentIntf' />
+
+  <extend-property name="locale" values="zh_CN" />
+
+  <entry-point class="com.hd123.m3.account.gwt.payment.pay.client.EPPayment" />
+  <servlet path="/account/payment"
+    class='com.hd123.m3.account.gwt.payment.pay.server.PaymentServiceServlet' />
+</module>

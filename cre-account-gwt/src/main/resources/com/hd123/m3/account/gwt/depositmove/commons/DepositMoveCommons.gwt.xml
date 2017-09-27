@@ -1,0 +1,16 @@
+<module>
+
+  <inherits name='com.google.gwt.i18n.I18N' />
+  <inherits name='com.hd123.rumba.gwt.base.Base' />
+  <inherits name='com.hd123.rumba.gwt.util.Util' />
+  <inherits name='com.hd123.rumba.gwt.widget2.Widget2' />
+  <inherits name='com.hd123.rumba.gwt.widget2e.Widget2E' />
+  <inherits name="com.hd123.rumba.commons.gwt.entity.Entity" />
+
+ <inherits name='com.hd123.m3.commons.gwt.cpnt.dispatch.intf.DispatchIntf' />
+
+  <extend-property name="locale" values="zh_CN" />
+
+  <servlet path="/account/depositMove"
+    class="com.hd123.m3.account.gwt.depositmove.commons.server.DepositMoveServiceServlet" />
+</module>

@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+.fixTable {
+	table-layout: fixed;
+	width: 100%;
+}

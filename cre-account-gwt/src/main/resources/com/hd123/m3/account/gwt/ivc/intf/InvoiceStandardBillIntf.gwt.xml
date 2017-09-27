@@ -1,0 +1,5 @@
+<module>
+  <inherits name='com.google.gwt.user.User' />
+  <inherits name='com.hd123.rumba.gwt.util.Util' />
+  <extend-property name="locale" values="zh_CN" />
+</module>

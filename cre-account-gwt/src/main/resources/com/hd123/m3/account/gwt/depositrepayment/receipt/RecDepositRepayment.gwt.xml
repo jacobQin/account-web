@@ -1,0 +1,38 @@
+<module>
+  <!-- Inherit the core Web Toolkit stuff. -->
+
+  <inherits name='com.google.gwt.user.User' />
+  <inherits name='com.hd123.rumba.gwt.base.Base' />
+  <inherits name='com.hd123.rumba.gwt.util.Util' />
+  <inherits name='com.hd123.rumba.gwt.widget2.Widget2' />
+  <inherits name='com.hd123.rumba.gwt.widget2e.Widget2E' />
+  <inherits name='com.hd123.rumba.webframe.gwt.entrypoint.EntryPoint' />
+  <inherits name='com.hd123.rumba.webframe.gwt.noauthorized.intf.NoAuthorizedIntf' />
+  <inherits name='com.hd123.rumba.commons.gwt.entity.Entity' />
+  <inherits name='com.hd123.rumba.commons.gwt.mini.Mini' />
+  <inherits name='com.hd123.rumba.gwt.flecs.Flecs' />
+  <inherits name='com.hd123.rumba.gwt.flecs.prefs.FlecsPrefs' />
+
+  <inherits name='com.hd123.ia.widget.audit.AuditWidget' />
+
+  <inherits name='com.hd123.m3.commons.gwt.widget.Widget' />
+  <inherits name='com.hd123.m3.commons.gwt.bpm.Bpm' />
+
+  <inherits name='com.hd123.m3.account.gwt.base.Base' />
+  <inherits name='com.hd123.m3.account.gwt.util.Util' />
+  <inherits name='com.hd123.m3.account.gwt.cpnts.Cpnts' />
+  <inherits name='com.hd123.m3.account.gwt.commons.Commons' />
+  <inherits name='com.hd123.m3.account.gwt.subject.intf.SubjectIntf' />
+  <inherits name='com.hd123.m3.account.gwt.bank.intf.BankIntf' />
+  <inherits name='com.hd123.m3.account.gwt.depositrepayment.intf.DepositRepaymentIntf' />
+  <inherits name='com.hd123.m3.account.gwt.depositrepayment.commons.DepositRepaymentCommons' />
+  <inherits name='com.hd123.m3.account.gwt.depositrepayment.receipt.intf.RecDepositRepaymentIntf' />
+
+  <extend-property name="locale" values="zh_CN" />
+
+  <entry-point
+    class="com.hd123.m3.account.gwt.depositrepayment.receipt.client.EPRecDepositRepayment" />
+  <servlet path="/account/recDepositRepayment"
+    class="com.hd123.m3.account.gwt.depositrepayment.receipt.server.RecDepositRepaymentServiceServlet" />
+
+</module>

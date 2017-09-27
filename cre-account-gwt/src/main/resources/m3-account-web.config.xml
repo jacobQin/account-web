@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 版权所有(C)，上海海鼎信息工程股份有限公司，2013，所有权利保留。 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- 来源单据跳转配置 -->
+	<bean id="DispatchDefMgr"
+		class="com.hd123.m3.commons.gwt.cpnt.dispatch.server.group.DispatchDefMgr"
+		factory-method="getInstance" />
+	<bean factory-bean="DispatchDefMgr" factory-method="addFromFile">
+		<constructor-arg value="/META-INF/m3-account-web.dispatch.xml" />
+		<constructor-arg value="/application.properties" />
+	</bean>
+
+</beans>

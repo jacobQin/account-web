@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navi-set>
+  <!-- 账务 -->
+  <entry id="account">
+    <caption>账务</caption>
+  </entry>
+
+  <entry id="accountData">
+    <caption>基础资料</caption>
+  </entry>
+
+  <entry id="accountDataCategoryOne">
+    <caption>基础资料分类一</caption>
+  </entry>
+
+  <entry id="accountSubject">
+    <caption>科目</caption>
+    <hint>科目资料</hint>
+    <url>/cre-web/account/index.html#account.subject?node=search</url>
+    <icon>cre-icon-kemu</icon>
+    <p>
+      <resource>account.subject</resource>
+      <read />
+    </p>
+  </entry>
+  <entry id="accountPaymentType">
+    <caption>财务付款方式</caption>
+    <hint>财务付款方式资料</hint>
+    <url>/cre-web/account/index.html#account.paymenttype.paymenttype?node=search
+    </url>
+    <p>
+      <resource>account.paymentType</resource>
+      <read />
+    </p>
+  </entry>
+  <entry id="accountBank">
+    <caption>银行资料</caption>
+    <hint>银行资料</hint>
+    <url>/cre-web/account/index.html#account.bank?node=search
+    </url>
+    <p>
+      <resource>account.bank</resource>
+      <read />
+    </p>
+  </entry>
+  <entry id="accountOption">
+    <caption>结算配置</caption>
+    <hint>结算配置</hint>
+    <url>rbgwt:///www/com.hd123.m3.account.gwt.option.Option/Option.html
+    </url>
+    <p>
+      <resource>account.option</resource>
+      <read />
+    </p>
+  </entry>
+
+  <entry id="accountReceipt">
+    <caption>收款</caption>
+  </entry>
+
+  <entry id="accountReceiptCategoryOne">
+    <caption>收款分类一</caption>
+  </entry>
+
+  <entry id="accountReceiptBill">
+    <caption>收款单</caption>
+    <hint>收款单</hint>
+    <url>/cre-web/account/index.html#account.payment.receipt?node=search</url>
+    <icon>cre-icon-shoukuandan</icon>
+    <p>
+      <resource>account.payment.rec</resource>
+      <read />
+    </p>
+  </entry>
+  <entry id="accountRecDeposit">
+    <caption>预存款单</caption>
+    <hint>预存款单</hint>
+    <url>/cre-web/account/index.html#account.deposit.receipt?node=search</url>
+    <p>
+      <resource>account.recDeposit</resource>
+      <read />
+    </p>
+  </entry>
+  <entry id="accountRecDepositRepayment">
+    <caption>预存款还款单</caption>
+    <hint>预存款还款单</hint>
+    <url>/cre-web/account/index.html#account.deposit.repayment?node=search
+    </url>
+    <p>
+      <resource>account.recDepositRepayment</resource>
+      <read />
+    </p>
+  </entry>
+  <entry id="accountRecDepositMove">
+    <caption>预存款转移单</caption>
+    <hint>预存款转移单</hint>
+    <url>/cre-web/account/index.html#account.deposit.move?node=search
+    </url>
+    <p>
+      <resource>account.recDepositMove</resource>
+      <read />
+    </p>
+  </entry>
+  <entry id="accountPayment">
+    <caption>付款</caption>
+  </entry>
+
+  <entry id="accountPaymentCategoryOne">
+    <caption>付款分类一</caption>
+  </entry>
+
+  <entry id="accountPaymentBill">
+    <caption>付款单</caption>
+    <hint>付款单</hint>
+    <url>/cre-web/account/index.html#account.payment.pay?node=search
+    </url>
+    <p>
+      <resource>account.payment.pay</resource>
+      <read />
+    </p>
+  </entry>
+
+
+  <entry id="accountFee">
+    <caption>费用单</caption>
+  </entry>
+
+  <entry id="accountFeeCategoryOne">
+    <caption>费用单分类一</caption>
+  </entry>
+
+  <entry id="accountFeeBill">
+    <caption>费用单</caption>
+    <hint>费用单</hint>
+    <url>/cre-web/account/index.html#account.fee?node=search
+    </url>
+    <icon>cre-icon-feiyongdan</icon>
+    <p>
+      <resource>account.fee</resource>
+      <read />
+    </p>
+  </entry>
+
+  <entry id="accountReceivable">
+    <caption>财务应收</caption>
+  </entry>
+
+  <entry id="accountReceivableCategoryOne">
+    <caption>财务应收分类一</caption>
+  </entry>
+
+  <entry id="accountSettle">
+    <caption>出账</caption>
+    <hint>出账</hint>
+    <url>/cre-web/account/index.html#account.settle?node=create
+    </url>
+    <icon>cre-icon-chuzhang</icon>
+    <p>
+      <resource>account.accountSettle</resource>
+      <action>accSettle</action>
+    </p>
+  </entry>
+
+  <entry id="accountStatement">
+    <caption>账单</caption>
+    <hint>账单</hint>
+    <url>/cre-web/account/index.html#account.statement?node=search
+    </url>
+    <icon>cre-icon-zhangdan</icon>
+    <p>
+      <resource>account.statement</resource>
+      <read />
+    </p>
+  </entry>
+
+  <entry id="accountStatementAdjust">
+    <caption>账单调整单</caption>
+    <hint>账单调帐单</hint>
+    <url>/cre-web/account/index.html#account.statement.adjust?node=search
+    </url>
+    <p>
+      <resource>account.statementAdjust</resource>
+      <read />
+    </p>
+  </entry>
+  <entry id="accountPaymentNotice">
+    <caption>收付款通知单</caption>
+    <hint>收付款通知单</hint>
+    <url>rbgwt:///www/com.hd123.m3.account.gwt.paymentnotice.PaymentNotice/PaymentNotice.html
+    </url>
+    <p>
+      <resource>account.paymentNotice</resource>
+      <read />
+    </p>
+  </entry>
+
+  <entry id="accountOthers">
+    <caption>其他</caption>
+  </entry>
+
+  <entry id="accountOthersCategoryOne">
+    <caption>其他分类一</caption>
+  </entry>
+
+  <entry id="accountAccountDefrayal">
+    <caption>科目收付情况</caption>
+    <hint>账款科目收付情况</hint>
+    <url>/cre-web/account/index.html#account.defrayal?node=search</url>
+    <p>
+      <resource>account.report.accountdefrayal</resource>
+      <read />
+    </p>
+  </entry>
+
+  <entry id="accountAdvance">
+    <caption>预存款账户</caption>
+    <hint>预存款账户</hint>
+    <url>rbgwt:///www/com.hd123.m3.account.gwt.adv.Advance/Advance.html
+    </url>
+    <p>
+      <resource>account.advance</resource>
+      <read />
+    </p>
+  </entry>
+  <entry id="accountFreeze">
+    <caption>账款冻结单</caption>
+    <hint>账款冻结单</hint>
+    <url>/cre-web/account/index.html#account.freeze?node=search
+    </url>
+    <p>
+      <resource>account.freeze</resource>
+      <read />
+    </p>
+  </entry>
+  <entry id="accountAccObjectBill">
+    <caption>核算主体单</caption>
+    <hint>核算主体单</hint>
+    <url>/cre-web/account/index.html#account.accobjectbill?node=search
+    </url>
+    <p>
+      <resource>account.accobjectbill</resource>
+      <read />
+    </p>
+  </entry>
+
+  <entry id="paymentTypeReductionRatio">
+    <caption>付款方式提成比例</caption>
+    <hint>付款方式提成比例</hint>
+    <url>/cre-web/account/index.html#account.paymentType.reductionRatio?node=search
+    </url>
+    <p>
+      <resource>account.paymentType.reductionRatio</resource>
+      <read />
+    </p>
+  </entry>
+
+  <entry id="accountRebate">
+    <caption>销售额返款单</caption>
+    <hint>销售额返款单</hint>
+    <url>rbgwt:///www/com.hd123.m3.account.gwt.rebate.RebateBill/RebateBill.html
+    </url>
+    <p>
+      <resource>account.rebate</resource>
+      <read />
+    </p>
+  </entry>
+  <entry id="accountRebate_ext">
+    <caption>销售额返款单Ext</caption>
+    <hint>销售额返款单_Ext</hint>
+    <url>/cre-web/account/index.html#account.rebate2?node=search
+    </url>
+    <p>
+      <resource>account.rebate</resource>
+      <read />
+    </p>
+  </entry>
+
+  <entry id="accountInvoice">
+    <caption>发票</caption>
+  </entry>
+
+  <entry id="accountInvoiceCategoryOne">
+    <caption>发票分类一</caption>
+  </entry>
+
+  <entry id="accountInvoiceInstock">
+    <caption>发票入库单</caption>
+    <hint>发票入库单</hint>
+    <url>/cre-web/account/index.html#account.invoice.instock?node=search</url>
+    <p>
+      <resource>account.invoice.instock</resource>
+      <read />
+    </p>
+  </entry>
+
+  <entry id="accountInvoiceStock">
+    <caption>发票库存</caption>
+    <hint>发票库存</hint>
+    <url>/cre-web/account/index.html#account.invoice.stock?node=search
+    </url>
+    <p>
+      <resource>account.invoice.stock</resource>
+      <read />
+    </p>
+  </entry>
+  <entry id="accountInvoiceReceive">
+    <caption>发票领用单</caption>
+    <hint>发票领用单</hint>
+    <url>/cre-web/account/index.html#account.invoice.receive?node=search
+    </url>
+    <p>
+      <resource>account.invoice.receive</resource>
+      <read />
+    </p>
+  </entry>
+  <entry id="accountInvoiceReturn">
+    <caption>发票领退单</caption>
+    <hint>发票领退单</hint>
+    <url>/cre-web/account/index.html#account.invoice.returns?node=search
+    </url>
+    <p>
+      <resource>account.invoice.return</resource>
+      <read />
+    </p>
+  </entry>
+  <entry id="accountInvoiceAbort">
+    <caption>发票作废单</caption>
+    <hint>发票作废单</hint>
+    <url>/cre-web/account/index.html#account.invoice.abort?node=search
+    </url>
+    <p>
+      <resource>account.invoice.abort</resource>
+      <read />
+    </p>
+  </entry>
+
+  <entry id="accountInvoiceExchange">
+    <caption>发票交换单</caption>
+    <hint>发票交换单</hint>
+    <url>/cre-web/account/index.html#account.invoice.exchange?node=search
+    </url>
+    <p>
+      <resource>account.invoice.exchange</resource>
+      <read />
+    </p>
+  </entry>
+  <entry id="accountInvoiceTransport">
+    <caption>发票调拨单</caption>
+    <hint>发票调拨单</hint>
+    <url>/cre-web/account/index.html#account.invoice.transport?node=search
+    </url>
+    <p>
+      <resource>account.invoice.transport</resource>
+      <read />
+    </p>
+  </entry>
+
+  <entry id="accountInvoiceRecycle">
+    <caption>发票回收单</caption>
+    <hint>发票回收单</hint>
+    <url>/cre-web/account/index.html#account.invoice.recycle?node=search
+    </url>
+    <p>
+      <resource>account.invoice.recycle</resource>
+      <read />
+    </p>
+  </entry>
+  <entry id="accountInvoiceRegReceipt">
+    <caption>收款发票登记单</caption>
+    <hint>收款发票登记单</hint>
+    <url>/cre-web/account/index.html#account.invoice.reg?node=search</url>
+    <p>
+      <resource>account.invoice.reg.rec</resource>
+      <read />
+    </p>
+  </entry>
+</navi-set>

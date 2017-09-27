@@ -1,0 +1,20 @@
+<module>
+
+  <!-- Inherit the core Web Toolkit stuff. -->
+  <inherits name='com.google.gwt.i18n.I18N' />
+  <inherits name='com.hd123.rumba.gwt.base.Base' />
+  <inherits name='com.hd123.rumba.gwt.util.Util' />
+  <inherits name='com.hd123.rumba.gwt.widget2.Widget2' />
+  <inherits name='com.hd123.rumba.gwt.widget2e.Widget2E' />
+  <inherits name="com.hd123.rumba.commons.gwt.entity.Entity" />
+  <inherits name='com.hd123.m3.commons.gwt.mres.MRes' />
+  <inherits name='com.hd123.m3.commons.gwt.cpnt.dispatch.intf.DispatchIntf' />
+  <inherits name='com.hd123.m3.account.gwt.util.Util' />
+  <inherits name='com.hd123.m3.account.gwt.base.Base' />
+  <inherits name='com.hd123.m3.account.gwt.commons.Commons' />
+
+
+  <extend-property name="locale" values="zh_CN" />
+  <servlet path="/account/common/cpnts" class="com.hd123.m3.account.gwt.cpnts.server.AccountCpntsServiceServlet" />
+
+</module>

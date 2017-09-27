@@ -1,0 +1,11 @@
+<module>
+	<inherits name='com.google.gwt.user.User' />
+	<inherits name='com.hd123.rumba.gwt.base.Base' />
+	<inherits name='com.hd123.rumba.gwt.util.Util' />
+
+	<inherits name='com.hd123.m3.commons.gwt.base.Base' />
+	<inherits name='com.hd123.m3.account.gwt.base.Base' />
+	<inherits name='com.hd123.m3.account.gwt.commons.Commons' />
+
+	<extend-property name="locale" values="zh_CN" />
+</module>

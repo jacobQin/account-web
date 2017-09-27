@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+
+  <config comment="main">
+    <source>
+      <rootDir>../m3-account-ejb/src/main/java</rootDir>
+      <package>com.hd123.m3.account.ejb.perz.statement.adjust</package>
+    </source>
+    <gwt>
+      <rootDir>src/main/java</rootDir>
+      <resourceDir>src/main/resources</resourceDir>
+      <constant>
+        <packageMapping>com.hd123.m3.account.gwt.statement.adjust.intf.client.dd.*
+        </packageMapping>
+      </constant>
+      <fieldDef>
+        <declaredPackage>
+          com.hd123.rumba.gwt.util.client.fielddef
+        </declaredPackage>
+        <packageMapping>
+          com.hd123.m3.account.gwt.statement.adjust.intf.client.dd.*
+        </packageMapping>
+      </fieldDef>
+    </gwt>
+  </config>
+
+</project>
